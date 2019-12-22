@@ -7,6 +7,7 @@ namespace App\Tests\Domain;
 use DateTimeImmutable;
 use App\Domain\Document;
 use PHPUnit\Framework\TestCase;
+use App\Domain\DocumentCannotBeEdited;
 use function Ramsey\Uuid\v4 as uuid;
 
 class DocumentTest extends TestCase
@@ -52,14 +53,13 @@ class DocumentTest extends TestCase
      * @dataProvider payloadDataProvider
      * @param array $payload
      */
-    public function testPublishedCanBeEdited(array $payload): void
+    public function testPublishedCannotBeEdited(array $payload): void
     {
+        $this->expectException(DocumentCannotBeEdited::class);
+
         $document = $this->createDocument(Document::STATUS_PUBLISHED);
 
         $document->edit($payload);
-
-        $this->assertEquals(Document::STATUS_PUBLISHED, $document->getStatus());
-        $this->assertEquals($payload, $document->getPayload());
     }
 
     public function payloadDataProvider(): array

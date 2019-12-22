@@ -58,6 +58,10 @@ class Document
 
     public function edit(array $payload): void
     {
+        if ($this->status === self::STATUS_PUBLISHED) {
+            throw DocumentCannotBeEdited::alreadyPublished($this->id);
+        }
+
         $this->payload = $payload;
         $this->updatedAt = new DateTimeImmutable();
     }
