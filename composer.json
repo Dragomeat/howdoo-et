@@ -21,6 +21,7 @@
         "doctrine/collections": "^1.6",
         "lambdish/phunctional": "^2.0",
         "ramsey/uuid": "^3.9",
+        "spiral/roadrunner": "^1.5",
         "webmozart/assert": "^1.6",
         "zendframework/zend-component-installer": "^2.1.1",
         "zendframework/zend-config-aggregator": "^1.0",
@@ -32,6 +33,7 @@
         "zendframework/zend-stdlib": "^3.1"
     },
     "require-dev": {
+        "behat/behat": "^3.5",
         "filp/whoops": "^2.1.12",
         "phpunit/phpunit": "^7.5.18",
         "roave/security-advisories": "dev-master",
