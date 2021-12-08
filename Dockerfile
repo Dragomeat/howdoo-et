@@ -30,14 +30,6 @@ COPY composer.lock .
 RUN composer install -o --no-dev --prefer-dist \
   && vendor/bin/rr get-binary
 
-FROM base as development
-
-COPY --from=composer /app/rr /usr/local/bin/
-COPY --from=composer /usr/local/bin/composer /usr/local/bin/
-COPY ./docker-dev-entrypoint.sh /usr/local/bin/entrypoint
-
-CMD ["entrypoint"]
-
 FROM base as production
 
 COPY --from=composer /app/vendor /app/
@@ -46,3 +38,11 @@ COPY --from=composer /app/rr /usr/local/bin/
 COPY . .
 
 CMD ["/usr/local/bin/rr", "serve", "-c", ".rr.yaml"]
+
+FROM base as development
+
+COPY --from=composer /app/rr /usr/local/bin/
+COPY --from=composer /usr/local/bin/composer /usr/local/bin/
+COPY ./docker-dev-entrypoint.sh /usr/local/bin/entrypoint
+
+CMD ["entrypoint"]
