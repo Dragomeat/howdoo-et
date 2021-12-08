@@ -14,9 +14,9 @@ require 'vendor/autoload.php';
     /** @var \Psr\Container\ContainerInterface $container */
     $container = require 'config/container.php';
 
-    /** @var \Zend\Expressive\Application $app */
-    $app = $container->get(\Zend\Expressive\Application::class);
-    $factory = $container->get(\Zend\Expressive\MiddlewareFactory::class);
+    /** @var \Mezzio\Application $app */
+    $app = $container->get(\Mezzio\Application::class);
+    $factory = $container->get(\Mezzio\MiddlewareFactory::class);
 
     (require 'config/pipeline.php')($app, $factory, $container);
     (require 'config/routes.php')($app, $factory, $container);

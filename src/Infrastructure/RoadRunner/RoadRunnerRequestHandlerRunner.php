@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace App\Infrastructure\RoadRunner;
 
 use Spiral\RoadRunner\PSR7Client;
-use Zend\HttpHandlerRunner\Emitter;
+use Laminas\HttpHandlerRunner\Emitter;
 use Psr\Http\Server\RequestHandlerInterface;
-use Zend\HttpHandlerRunner\RequestHandlerRunner;
+use Laminas\HttpHandlerRunner\RequestHandlerRunner;
 
 class RoadRunnerRequestHandlerRunner extends RequestHandlerRunner
 {

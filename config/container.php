@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Zend\ServiceManager\ServiceManager;
+use Laminas\ServiceManager\ServiceManager;
 
 $config = require __DIR__ . '/config.php';
 

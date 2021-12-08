@@ -8,9 +8,9 @@ use Spiral\RoadRunner\Worker;
 use Spiral\Goridge\StreamRelay;
 use Spiral\RoadRunner\PSR7Client;
 use Spiral\Goridge\RelayInterface;
-use Zend\HttpHandlerRunner\RequestHandlerRunner;
-use Zend\HttpHandlerRunner\Emitter\EmitterInterface;
-use Zend\ServiceManager\AbstractFactory\ReflectionBasedAbstractFactory;
+use Laminas\HttpHandlerRunner\RequestHandlerRunner;
+use Laminas\HttpHandlerRunner\Emitter\EmitterInterface;
+use Laminas\ServiceManager\AbstractFactory\ReflectionBasedAbstractFactory;
 
 class Provider
 {
@@ -31,7 +31,7 @@ class Provider
                     RequestHandlerRunner::class => RoadRunnerRequestHandlerRunner::class,
                 ],
                 'delegators' => [
-                    'Zend\Expressive\WhoopsPageHandler' => [
+                    'Mezzio\WhoopsPageHandler' => [
                         WhoopsPrettyPageHandlerDelegator::class,
                     ],
                 ],

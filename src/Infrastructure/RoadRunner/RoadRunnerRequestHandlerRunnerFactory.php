@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace App\Infrastructure\RoadRunner;
 
 use Spiral\RoadRunner\PSR7Client;
-use Zend\HttpHandlerRunner\Emitter;
+use Laminas\HttpHandlerRunner\Emitter;
 use Psr\Container\ContainerInterface;
-use Zend\Expressive\ApplicationPipeline;
+use Mezzio\ApplicationPipeline;
 use Psr\Http\Message\ServerRequestInterface;
-use Zend\Expressive\Response\ServerRequestErrorResponseGenerator;
+use Mezzio\Response\ServerRequestErrorResponseGenerator;
 
 class RoadRunnerRequestHandlerRunnerFactory
 {

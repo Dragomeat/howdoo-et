@@ -7,7 +7,7 @@ namespace App\Infrastructure\RoadRunner;
 use Throwable;
 use Spiral\RoadRunner\PSR7Client;
 use Psr\Http\Message\ResponseInterface;
-use Zend\HttpHandlerRunner\Emitter\EmitterInterface;
+use Laminas\HttpHandlerRunner\Emitter\EmitterInterface;
 
 class RoadRunnerEmitter implements EmitterInterface
 {
